@@ -1,0 +1,73 @@
+﻿@model Daniel_Tueros.Alumno
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Alumno</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AL1_CPATERNO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AL1_CPATERNO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AL1_CMATERNO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AL1_CMATERNO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AL1_CNOMBRES)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AL1_CNOMBRES)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AL1_CDIRECCION)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AL1_CDIRECCION)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AL1_FECHA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AL1_FECHA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AL1_NEDAD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.edad)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

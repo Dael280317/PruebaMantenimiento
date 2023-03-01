@@ -1,0 +1,65 @@
+﻿@model IEnumerable<Daniel_Tueros.Alumno>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            APELLIDO PATERNO
+        </th>
+        <th>
+            APELLIDO MATERNO
+        </th>
+        <th>
+            NOMBRES
+        </th>
+        <th>
+            DIRECCION
+        </th>
+        <th>
+            FECHA NACIMIENTO
+        </th>
+        <th>
+            EDAD
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.AL1_CPATERNO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AL1_CMATERNO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AL1_CNOMBRES)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AL1_CDIRECCION)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AL1_FECHA)
+            
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.edad)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.AL1_CCODIGO }) |
+            @Html.ActionLink("Details", "Details", new { id=item.AL1_CCODIGO }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.AL1_CCODIGO })
+        </td>
+    </tr>
+}
+
+</table>
